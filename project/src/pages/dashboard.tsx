@@ -60,7 +60,7 @@ const recentOrders = [
     orderId: "#25428",
     date: "Nov 9th 2024",
     customerName: "Bunny",
-    status: "delivered",
+    status: "delivered" as "delivered" | "cancelled" | "pending",
     amount: 1200.00,
   },
   {
@@ -69,7 +69,7 @@ const recentOrders = [
     orderId: "#25427",
     date: "Nov 9th 2024",
     customerName: "Rahul",
-    status: "cancelled",
+    status: "cancelled" as "delivered" | "cancelled" | "pending",
     amount: 1200.00,
   },
   {
@@ -90,7 +90,7 @@ const recentOrders = [
     status: "cancelled",
     amount: 1200.00,
   },
-] as const;
+];
 
 export function DashboardPage() {
   const [timeRange, setTimeRange] = useState<TimeRange>("MONTHLY");

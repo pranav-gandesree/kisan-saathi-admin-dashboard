@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Plus } from "lucide-react";
+import { Link } from "react-router-dom";
 
-interface ProductFiltersProps {
-  onSearch: (query: string) => void;
-}
 
-export function ProductFilters({ onSearch }: ProductFiltersProps) {
+export function ProductFilters({ onSearch }: any) {
   return (
     <div className="flex items-center justify-between pb-4">
       <div className="flex w-full max-w-sm items-center space-x-2">
@@ -19,10 +17,12 @@ export function ProductFilters({ onSearch }: ProductFiltersProps) {
           />
         </div>
       </div>
+      <Link to="/products/addproduct">
       <Button>
-        <Plus className="mr-2 h-4 w-4" />
-        Add New Product
+      <Plus className="mr-2 h-4 w-4" />
+      Add New Product
       </Button>
+      </Link>
     </div>
   );
 }
